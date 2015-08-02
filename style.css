@@ -1,0 +1,35 @@
+a, a:visited {
+  color: #B63A3A;
+  text-decoration: none;
+}
+
+a:hover, a:active, a:focus {
+  color: #7C2727;
+  text-decoration: none;
+}
+
+#content {
+  margin: 0 auto 0 auto;
+  /*padding: 0 5% 0 5%;
+  width: 50%;*/
+}
+
+#name {
+  color: #515151;
+}
+
+#address {
+  margin-top: 50px;
+}
+
+.block {
+  margin-top: 90px;
+}
+
+.mini-block {
+  margin-top: 30px;
+}
+
+.date {
+  color: #BDBDBD;
+}

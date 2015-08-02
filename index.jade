@@ -1,0 +1,76 @@
+html(lang="en")
+  head
+    meta(http-equiv="Content-Type" content="text/html; charset=UTF-8")
+    each stylesheet in stylesheets
+      link(href=stylesheet rel="stylesheet")
+    title= title
+
+  body
+    #content
+      // Name
+      .row#name
+        .col-xs-12.text-center
+          h1= name
+
+      // Address
+      .row#address
+        .col-xs-12.text-right
+          address
+            strong
+              a(href="mailto:#{email}")
+                span.glyphicon.glyphicon-envelope
+                | &nbsp;#{email}
+            br
+            strong
+              span.glyphicon.glyphicon-earphone
+              | &nbsp;#{phoneNumber}
+            br
+            strong
+              span.glyphicon.glyphicon-user
+              | &nbsp;#{address}
+
+      // Experiences
+      .row.block#experiences
+        .col-xs-12
+          h2 Experiences
+          hr
+          each experience in experiences
+            .col-xs-offset-1.mini-block
+              h2
+                a(href=experience.url || '#')= experience.title
+              h4.date #{experience.from} ~ #{experience.to}
+            .col-xs-offset-2
+              p.text-justify= experience.activity
+              hr
+
+      // Educations
+      .row.block#educations
+        .col-xs-12
+          h2 Education
+          hr
+          each education in educations
+            .col-xs-offset-1.mini-block
+              h2
+                a(href=education.url || '#')
+                  | #{education.title}
+                  if education.subtitle
+                    small &nbsp;#{education.subtitle}
+              h4.date #{education.from} ~ #{education.to}
+            .col-xs-offset-2
+              if education.diploma
+                p Diploma:
+                  strong &nbsp;#{education.diploma}
+              p.text-justify= education.activity
+              hr
+
+      // Languages
+      .row.block#languages
+        .col-xs-12
+          h2 Languages
+          hr
+          .col-xs-offset-1
+            each language in languages
+              span
+                strong= language.name
+                | &nbsp;- #{language.level}
+              br
